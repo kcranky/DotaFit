@@ -1,0 +1,36 @@
+<head>
+  <title>DotaFit - Become Godlike</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<template name="home">
+    <ul class="collection">
+        {{#each workouts}}
+            <li class="collection-item avatar">
+                <span class="title"><b>{{name}}</b></span>
+                <p>{{explain}}<br>
+                    <i>{{fun}}</i></p>
+            </li>
+        {{/each}}
+    </ul>
+</template>
+
+<template name="explain">
+    <ul class="collection">
+        <li class="collection-item avatar">
+            <span class="title"><b>P-Type Exercise</b></span>
+            <p>A sit-up or push-up. The app will total this count, then half it, so you do equal amounts of each.<br>
+                <i>Don't forget leg day</i></p>
+        </li>
+        {{#each workouts}}
+            <li class="collection-item avatar">
+                <span class="title"><b>{{name}}</b></span>
+                <p>{{explain}}<br>
+                    <i>{{fun}}</i></p>
+            </li>
+        {{/each}}
+    </ul>
+</template>
+

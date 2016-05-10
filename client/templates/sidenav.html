@@ -1,0 +1,16 @@
+<template name="sidenav">
+    <nav id = "navbar">
+        <a href="#" class="brand-logo center">GET GODLIKE</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="/">Home</a></li>
+            <li><a href="/explain">Events and Exercises</a></li>
+        </ul>
+        <ul id="slide-out" class="side-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/explain">Events and Exercises</a></li>
+        </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+    </nav>
+
+    {{>yield}}
+</template>
