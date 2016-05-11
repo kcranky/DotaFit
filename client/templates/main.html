@@ -6,15 +6,46 @@
 
 
 <template name="home">
-    <ul class="collection">
+    <div class = "row">
         {{#each workouts}}
-            <li class="collection-item avatar">
-                <span class="title"><b>{{name}}</b></span>
-                <p>{{explain}}<br>
-                    <i>{{fun}}</i></p>
-            </li>
+            {{#if checkType type "binary"}}
+                <div class="col s6 m4 l3">
+                    <p class="flow-text">
+                        <h5>{{formatName name}}</h5>
+                        <input type="checkbox" class="filled-in" id={{name}} checked="checked"/>
+                        <label class="check" for={{name}}>{{formatName name}}</label>
+                    </p>
+                </div>
+            {{/if}}
+            {{#if checkType type "increment"}}
+                <div class="col s6 m4 l3">
+                    <p class="flow-text">
+                        <h5>{{formatName name}}</h5>
+                        <a id={{name}} class= "waves-effect waves-light btn green">{{formatName name}}</a>
+                    </p>
+                </div>
+            {{/if}}
+            {{#if checkType type "amount"}}
+                <div class="col s6 m4 l3">
+                    <p class="flow-text">
+                        <h5>{{formatName name}}</h5>
+                        <input id={{name}} type="number" value="0"/>
+                    </p>
+                </div>
+            {{/if}}
+            {{#if checkType type "reset"}}
+                <div class="col s6 m4 l3">
+                    <p class="flow-text">
+                    <h5>{{formatName name}}</h5>
+                        <a id={{name}} class="waves-effect waves-light btn red">{{formatName name}}</a>
+                    </p>
+                </div>
+            {{/if}}
         {{/each}}
-    </ul>
+    </div>
+    <div class="swoleBtn">
+        <a class="waves-effect waves-light btn-large red">MAKE ME SWOLE</a><br>
+    </div>
 </template>
 
 <template name="explain">

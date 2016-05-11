@@ -1,1 +1,8 @@
+div .col{
+    border: 1px solid black;
+    min-height: 147px; /*Happens to just be this amount?*/
+}
 
+.swoleBtn{
+    text-align:center;
+}

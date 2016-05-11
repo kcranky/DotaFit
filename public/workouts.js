@@ -4,8 +4,8 @@
  */
 workout_list = [
     {
-        name: "First Blood",
-        hint: "Did you win or loose first blood?",
+        name: "Win_First_Blood",
+        hint: "Did your team win first blood?",
         explain: "Adds 10/15 p-type exercises, depending",
         fun: "GG! GG! GG!",
         type: "binary",
@@ -14,7 +14,7 @@ workout_list = [
         amount_loose: 15
     },
     {
-        name: "GG Call",
+        name: "GG_Called",
         hint: "Was GG called within 15 minutes?",
         explain: "Adds 10s worth of squats",
         fun: "He's Russian, right. Is he Russian?",
@@ -23,7 +23,16 @@ workout_list = [
         amount_win: 10
     },
     {
-        name:"Double Kill",
+        name: "Win_the_Game",
+        hint: "Did you win or loose?",
+        explain: "10/15 p-type, depending.",
+        fun: "Oh, you lost? Shame. GET SWOLE NOT SAD",
+        type: "binary",
+        exercise: "p",
+        amount: 0
+    },
+    {
+        name:"Double_Kill",
         hint: "Click every time you get a double kill",
         explain: "Adds 10s worth of squats",
         fun: "Nice and easy",
@@ -32,7 +41,7 @@ workout_list = [
         amount: 10
     },
     {
-        name:"Triple Kill",
+        name:"Triple_Kill",
         hint: "Click every time you get a triple kill",
         explain: "Adds 15s worth of squats",
         fun: "Woah, there tiger",
@@ -41,10 +50,28 @@ workout_list = [
         amount: 15
     },
     {
-        name:"Ultra Kill",
+        name:"Ultra_Kill",
         hint: "Click every time you get an ultra kill",
         explain: "Adds 15 p-type exercises.",
         fun: "Ultra in game = Ultra IRL",
+        type: "increment",
+        exercise: "p",
+        amount: 15
+    },
+    {
+        name:"Godlike",
+        hint: "Click every time you get a godlike streak",
+        explain: "Adds 10 p-type exercises.",
+        fun: "Dude. Why are you even playing pub games?",
+        type: "increment",
+        exercise: "p",
+        amount: 10
+    },
+    {
+        name: "BabyRage",
+        hint: "If someone starts ranting, moaning or spam pinging, click this button",
+        explain: "Adds 15 p-type",
+        fun: "Did someone babyrage? Do 15 pushups so you can PUNCH THEM IN THE FACE! *Flexes*",
         type: "increment",
         exercise: "p",
         amount: 15
@@ -59,7 +86,7 @@ workout_list = [
         amount: -1
     },
     {
-        name: "Kill",
+        name: "Kills",
         hint: "Enter in your total amount of kills",
         explain: "3 p-type for each",
         fun: "Just don't kill in real life, m'kay?",
@@ -68,7 +95,7 @@ workout_list = [
         amount: 3
     },
     {
-        name: "Death",
+        name: "Deaths",
         hint: "Enter in total amount of deaths",
         explain: "3 p-type for each",
         fun: "YORMT - You only respawn multiple times",
@@ -77,30 +104,12 @@ workout_list = [
         amount: 3
     },
     {
-        name: "Assist",
+        name: "Assists",
         hint: "Enter in your total amount of assists",
         explain: "Adds 5s squats for each one.",
         fun: "You need stronger legs, so you can carry better.",
-        type: "increment",
+        type: "amount",
         exercise: "squat",
         amount: 5
-    },
-    {
-        name: "Game Outcome",
-        hint: "Did you win or loose?",
-        explain: "10/15 p-type, depending.",
-        fun: "Shame. Or Yay. I really don't care. GET SWOLE NOT SAD",
-        type: "binary",
-        exercise: "p",
-        amount: 0
-    },
-    {
-        name: "BabyRage",
-        hint: "If someone starts ranting, moaning or spam pinging, click this button",
-        explain: "Adds 15 p-type",
-        fun: "Did someone babyrage? Do 15 pushups so you can PUNCH THEM IN THE FACE! *Flexes*",
-        type: "increment",
-        exercise: "p",
-        amount: 15
     }
 ]
