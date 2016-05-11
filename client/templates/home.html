@@ -1,0 +1,42 @@
+<template name="home">
+    <div class = "row">
+        {{#each workouts}}
+            {{#if checkType type "binary"}}
+                <div class="col s6 m4 l3">
+                    <p class="flow-text">
+                    <h5>{{formatName name}}</h5>
+                    <input type="checkbox" class="filled-in" id={{name}} checked="false" />
+                    <label id={{name}} class="check" for={{name}} title={{hint}}>{{hint}}</label>
+                    </p>
+                </div>
+            {{/if}}
+            {{#if checkType type "increment"}}
+                <div class="col s6 m4 l3">
+                    <p class="flow-text">
+                    <h5>{{formatName name}}</h5>
+                    <a id={{name}} class= "waves-effect waves-light btn green" title={{hint}} ><i class="material-icons left">add</i>Add</a>
+                    </p>
+                </div>
+            {{/if}}
+            {{#if checkType type "amount"}}
+                <div class="col s6 m4 l3">
+                    <p class="flow-text">
+                    <h5>{{formatName name}}</h5>
+                    <input id={{name}} type="number" value="0" title={{hint}}/>
+                    </p>
+                </div>
+            {{/if}}
+            {{#if checkType type "reset"}}
+                <div class="col s6 m4 l3">
+                    <p class="flow-text">
+                    <h5>{{formatName name}}</h5>
+                    <a id={{name}} class="waves-effect waves-light btn red" title={{hint}}>Aww Yiss</a>
+                    </p>
+                </div>
+            {{/if}}
+        {{/each}}
+    </div>
+    <div class="swoleBtn">
+        <a id="getSwole" class="waves-effect waves-light btn-large red">MAKE ME SWOLE</a>
+    </div>
+</template>

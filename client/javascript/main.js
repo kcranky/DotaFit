@@ -3,6 +3,9 @@ import { ReactiveVar } from 'meteor/reactive-var';
 import  "./../../public/workouts.js"
 
 import './../templates/main.html';
+import './../templates/home.html';
+
+
 
 Template.explain.helpers({
       workouts: function () {
@@ -10,52 +13,31 @@ Template.explain.helpers({
       }
 });
 
-Template.home.helpers({
-    workouts: function () {
-        return workout_list;
+Template.results.helpers({
+   pAmount: function(){
+       return Math.round(Session.get('pUse'));
+   },
+    squats: function() {
+        return Math.round(Session.get('squatUse'));
     }
 });
 
-Template.registerHelper("checkType", function(type, someStr) {
-    return type == someStr;
+Template.results.onRendered(function() {
+    Session.set('pUse', Session.get('p'));
+    Session.set('squatUse', Session.get('squat'));
+    document.getElementById("swole").value = 1;
 });
 
-Template.registerHelper("formatName", function(someStr) {
-    return someStr.replace(/_/g, " ");
-});
-
-Template.home.events({
-    //Handle the checkboxes
-    'click .check': function(e){
-        //e.preventDefault();
-        console.log(e.target.id);
-        console.log(e.target.checked);
-        /*if(e.target.checked == true){
-            e.target.checked = false;
-        }
-        else{
-            e.target.checked = true;
-        }*/
-        console.log(e.target.checked);
+Template.results.events({
+    'click .newGame': function(){
+        Session.set('p', 0);
+        Session.set('squat', 0);
+        Session.set('pUse', 0);
+        Session.set('squatUse', 0);
+        Router.go('/');
     },
-
-    //Handle Buttons
-    'click #Double_Kill': function(e){
-        console.log(e.target.id);
-    },
-    'click #Triple_Kill': function(e){
-        console.log(e.target.id);
-    },
-    'click #Ultra_Kill': function(e){
-        console.log(e.target.id);
-    },
-    'click #Godlike': function(e){
-        console.log(e.target.id);
-    },
-    'click #BabyRage': function(e){
-        console.log(e.target.id);
-    },
-    'click #Rampage': function(e){
-        console.log(e.target.id);
+    'change input[id=swole]': function(event){
+        Session.set('pUse', Session.get('p') + (Session.get('p')*event.target.value*0.05));
+        Session.set('squatUse', Session.get('squat') + (Session.get('squat')*0.05*event.target.value));
     }
 });

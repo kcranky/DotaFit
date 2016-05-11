@@ -4,50 +4,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-
-<template name="home">
-    <div class = "row">
-        {{#each workouts}}
-            {{#if checkType type "binary"}}
-                <div class="col s6 m4 l3">
-                    <p class="flow-text">
-                        <h5>{{formatName name}}</h5>
-                        <input type="checkbox" class="filled-in" id={{name}} checked="checked"/>
-                        <label class="check" for={{name}}>{{formatName name}}</label>
-                    </p>
-                </div>
-            {{/if}}
-            {{#if checkType type "increment"}}
-                <div class="col s6 m4 l3">
-                    <p class="flow-text">
-                        <h5>{{formatName name}}</h5>
-                        <a id={{name}} class= "waves-effect waves-light btn green">{{formatName name}}</a>
-                    </p>
-                </div>
-            {{/if}}
-            {{#if checkType type "amount"}}
-                <div class="col s6 m4 l3">
-                    <p class="flow-text">
-                        <h5>{{formatName name}}</h5>
-                        <input id={{name}} type="number" value="0"/>
-                    </p>
-                </div>
-            {{/if}}
-            {{#if checkType type "reset"}}
-                <div class="col s6 m4 l3">
-                    <p class="flow-text">
-                    <h5>{{formatName name}}</h5>
-                        <a id={{name}} class="waves-effect waves-light btn red">{{formatName name}}</a>
-                    </p>
-                </div>
-            {{/if}}
-        {{/each}}
-    </div>
-    <div class="swoleBtn">
-        <a class="waves-effect waves-light btn-large red">MAKE ME SWOLE</a><br>
-    </div>
-</template>
-
 <template name="explain">
     <ul class="collection">
         <li class="collection-item avatar">
@@ -57,7 +13,7 @@
         </li>
         {{#each workouts}}
             <li class="collection-item avatar">
-                <span class="title"><b>{{name}}</b></span>
+                <span class="title"><b>{{formatName name}}</b></span>
                 <p>{{explain}}<br>
                     <i>{{fun}}</i></p>
             </li>
@@ -65,3 +21,33 @@
     </ul>
 </template>
 
+
+<template name="results">
+    <!-- implement swole multiplier-->
+    <ul class="collection">
+        <li class="collection-item">
+            <h5>Swole-o-meter</h5>
+            <form action="#">
+                <p class="range-field">
+                    <input type="range" id="swole" min="0" max="100" />
+                </p>
+            </form>
+        </li>
+        <li class="collection-item">
+            <h5>Push-ups</h5> <b>{{pAmount}}</b>
+        </li>
+        <li class="collection-item">
+            <h5>Sit-ups</h5> <b>{{pAmount}}</b>
+        </li>
+        <li class="collection-item">
+            <h5>Squats</h5> <b>{{squats}} seconds</b>
+        </li>
+    </ul>
+    <div style="text-align:center;">
+        <p class="flow-text">
+            Please keep in mind that DotaFit is not an alternative to a healthy lifestyle. It is still important to eat well and exercise.
+            We recommend doing the exercises in reps of 10, increasing rep size as you feel comfortable.
+        </p>
+    </div>
+    <div style="text-align:center;" class="newGame"><a id="newGame" class="waves-effect waves-light btn-large red">Play another game</a></div>
+</template>
