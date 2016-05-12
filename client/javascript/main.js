@@ -1,11 +1,11 @@
+Meteor.disconnect();
+
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import  "./../../public/workouts.js"
 
 import './../templates/main.html';
 import './../templates/home.html';
-
-
 
 Template.explain.helpers({
       workouts: function () {

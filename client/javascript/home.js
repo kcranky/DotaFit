@@ -1,3 +1,5 @@
+Meteor.disconnect();
+
 var p = 0,
     squat = 0;
 
@@ -33,18 +35,18 @@ Template.home.events({
         squat+=15;
     },
     'click #Ultra_Kill': function(e){
-        p+=15;
+        squat+=15;
     },
     'click #Godlike': function(e){
         p+=10;
     },
     'click #BabyRage': function(e){
-        p+=15;
+        p+=10;
     },
     'click #Rampage': function(e){
         p=0;
         squat=0;
-        e.target.class = "disabled";
+        document.getElementById(e.target.id).className = "disabled";
     },
 
     //Submit form

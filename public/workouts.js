@@ -52,10 +52,10 @@ workout_list = [
     {
         name:"Ultra_Kill",
         hint: "Click every time you get an ultra kill",
-        explain: "Adds 15 p-type exercises.",
+        explain: "Adds 15s squats exercises.",
         fun: "Ultra in game = Ultra IRL",
         type: "increment",
-        exercise: "p",
+        exercise: "squat",
         amount: 15
     },
     {
@@ -70,11 +70,11 @@ workout_list = [
     {
         name: "BabyRage",
         hint: "If someone starts ranting, moaning or spam pinging, click this button",
-        explain: "Adds 15 p-type",
-        fun: "Did someone babyrage? Do 15 pushups so you can PUNCH THEM IN THE FACE! *Flexes*",
+        explain: "Adds 10 p-type",
+        fun: "Did someone babyrage? Do 10 pushups so you can PUNCH THEM IN THE FACE! *Flexes*",
         type: "increment",
         exercise: "p",
-        amount: 15
+        amount: 10
     },
     {
         name: "Rampage",
