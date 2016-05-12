@@ -46,7 +46,7 @@ Template.home.events({
     'click #Rampage': function(e){
         p=0;
         squat=0;
-        document.getElementById(e.target.id).className = "disabled";
+        document.getElementById(e.target.id).className = "disabled waves-effect waves-light btn red";
     },
 
     //Submit form
