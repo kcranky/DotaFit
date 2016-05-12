@@ -1,7 +1,12 @@
 Meteor.disconnect();
 
 var p = 0,
-    squat = 0;
+    squat = 0.
+    double=0,
+    triple=0,
+    ultra=0,
+    godlike=0,
+    babyrage=0;
 
 Template.home.helpers({
     workouts: function () {
@@ -20,6 +25,11 @@ Template.registerHelper("formatName", function(someStr) {
 Template.home.onRendered(function() {
     p=0;
     squat=0;
+    double=0;
+    triple=0;
+    ultra=0;
+    godlike=0;
+    babyrage=0;
     document.getElementById("Win_First_Blood").checked = false;
     document.getElementById("GG_Called").checked = false;
     document.getElementById("Win_the_Game").checked = false;
@@ -29,18 +39,28 @@ Template.home.onRendered(function() {
 Template.home.events({
     //Handle Buttons
     'click #Double_Kill': function(e){
+        double++;
+        document.getElementById('h'+e.target.id).innerHTML =  'Double Kill - ' + double;
         squat+=10;
     },
     'click #Triple_Kill': function(e){
+        triple++;
+        document.getElementById('h'+e.target.id).innerHTML =  'Triple Kill - ' + triple;
         squat+=15;
     },
     'click #Ultra_Kill': function(e){
+        ultra++;
+        document.getElementById('h'+e.target.id).innerHTML =  'Ultra Kill - ' + ultra;
         squat+=15;
     },
     'click #Godlike': function(e){
+        godlike++;
+        document.getElementById('h'+e.target.id).innerHTML =  'Godlike - ' + godlike;
         p+=10;
     },
     'click #BabyRage': function(e){
+        babyrage++;
+        document.getElementById('h'+e.target.id).innerHTML =  'BabyRage - ' + babyrage;
         p+=10;
     },
     'click #Rampage': function(e){
