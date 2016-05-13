@@ -17,3 +17,7 @@ Router.route('/explain', function () {
 Router.route('/results', function () {
     this.render('results');
 });
+
+Router.route('/about', function () {
+    this.render('about');
+});
