@@ -6,12 +6,11 @@ workout_list = [
     {
         name: "Win_First_Blood",
         hint: "Did your team win first blood?",
-        explain: "Adds 10/15 p-type exercises, depending",
+        explain: "Adds 10 p-type exercises",
         fun: "GG! GG! GG!",
         type: "binary",
         exercise: "p",
-        amount_win: 10,
-        amount_loose: 15
+        amount: 10,
     },
     {
         name: "GG_Called",
@@ -20,16 +19,16 @@ workout_list = [
         fun: "He's Russian, right. Is he Russian?",
         type: "binary",
         exercise: "squat",
-        amount_win: 10
+        amount: 10
     },
     {
         name: "Win_the_Game",
         hint: "Did you win or loose?",
-        explain: "10/15 p-type, depending.",
+        explain: "15 p-type, depending.",
         fun: "Oh, you lost? Shame. GET SWOLE NOT SAD",
         type: "binary",
         exercise: "p",
-        amount: 0
+        amount: 15
     },
     {
         name:"Double_Kill",

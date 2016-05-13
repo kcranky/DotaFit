@@ -1,7 +1,6 @@
 Meteor.disconnect();
 
 import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
 import  "./../../public/workouts.js"
 
 import './../templates/main.html';
@@ -30,8 +29,8 @@ Template.results.onRendered(function() {
 
 Template.results.events({
     'click .newGame': function(){
-        Session.set('p', 0);
-        Session.set('squat', 0);
+        Session.set('p', 10);
+        Session.set('squat', 10);
         Session.set('pUse', 0);
         Session.set('squatUse', 0);
         Router.go('/');
