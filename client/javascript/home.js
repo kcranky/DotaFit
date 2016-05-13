@@ -37,27 +37,27 @@ Template.home.events({
     'click #Double_Kill': function(e){
         double++;
         document.getElementById('h'+e.target.id).innerHTML =  'Double Kill - ' + double;
-        squat+=10;
+        addExercise(e.target.id);
     },
     'click #Triple_Kill': function(e){
         triple++;
         document.getElementById('h'+e.target.id).innerHTML =  'Triple Kill - ' + triple;
-        squat+=15;
+        addExercise(e.target.id);
     },
     'click #Ultra_Kill': function(e){
         ultra++;
         document.getElementById('h'+e.target.id).innerHTML =  'Ultra Kill - ' + ultra;
-        squat+=15;
+        addExercise(e.target.id);
     },
     'click #Godlike': function(e){
         godlike++;
         document.getElementById('h'+e.target.id).innerHTML =  'Godlike - ' + godlike;
-        p+=10;
+        addExercise(e.target.id);
     },
     'click #BabyRage': function(e){
         babyrage++;
         document.getElementById('h'+e.target.id).innerHTML =  'BabyRage - ' + babyrage;
-        p+=10;
+        addExercise(e.target.id);
     },
     'click #Rampage': function(e){
         p=0;
@@ -74,25 +74,22 @@ Template.home.events({
 function calculate(){
     //check checkboxes
     if(document.getElementById("Win_First_Blood").checked){
-        p+=10;
+        addExercise("Win_First_Blood");
     }
     if(document.getElementById("GG_Called").checked){
-        squat+=10;
+        addExercise("GG_Called");
     }
     if(document.getElementById("Win_the_Game").checked){
-        p+= 15;
+        addExercise("Win_the_Game");
     }
 
     //get the values from the spin edits
-    p+= document.getElementById("Kills").value*3;
-    p+= document.getElementById("Deaths").value*3;
-    squat+= document.getElementById("Assists").value*5;
+    p+= document.getElementById("Kills").value*(addExercise("Kills")-1);
+    p+= document.getElementById("Deaths").value*(addExercise("Deaths")-1);
+    squat+= document.getElementById("Assists").value*(addExercise("Assists")-1);
 
     Session.set("squat", Session.get('squat') + squat);
     Session.set("p", Session.get('p') + p);
-
-    console.log(Session.get('squat'), Session.get('squat') + squat);
-    console.log(Session.get('p'), Session.get('p') + p);
 
     //Reset the variables
     p=0;
@@ -104,4 +101,23 @@ function calculate(){
     babyrage=0;
 
     Router.go('/results');
+};
+
+
+function addExercise(name){
+    for(var i=0; i<=workout_list.length; i++){
+        if (workout_list[i].name == name){
+            if(workout_list[i].exercise == 'p'){
+                p+= workout_list[i].amount;
+                return workout_list[i].amount;
+            }
+            else if (workout_list[i].exercise == 'squat'){
+                squat+= workout_list[i].amount;
+                return workout_list[i].amount;
+            }
+            else{
+                console.log("exercise type not found");
+            }
+        }
+    }
 };

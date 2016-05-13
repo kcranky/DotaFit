@@ -23,8 +23,8 @@ workout_list = [
     },
     {
         name: "Win_the_Game",
-        hint: "Did you win or loose?",
-        explain: "15 p-type, depending.",
+        hint: "Did you win?",
+        explain: "15 p-type.",
         fun: "Oh, you lost? Shame. GET SWOLE NOT SAD",
         type: "binary",
         exercise: "p",
@@ -33,29 +33,29 @@ workout_list = [
     {
         name:"Double_Kill",
         hint: "Click every time you get a double kill",
-        explain: "Adds 10s worth of squats",
+        explain: "Adds 5s worth of squats",
         fun: "Nice and easy",
+        type: "increment",
+        exercise: "squat",
+        amount: 5
+    },
+    {
+        name:"Triple_Kill",
+        hint: "Click every time you get a triple kill",
+        explain: "Adds 10s worth of squats",
+        fun: "Woah, there tiger",
         type: "increment",
         exercise: "squat",
         amount: 10
     },
     {
-        name:"Triple_Kill",
-        hint: "Click every time you get a triple kill",
-        explain: "Adds 15s worth of squats",
-        fun: "Woah, there tiger",
-        type: "increment",
-        exercise: "squat",
-        amount: 15
-    },
-    {
         name:"Ultra_Kill",
         hint: "Click every time you get an ultra kill",
-        explain: "Adds 15s squats exercises.",
+        explain: "Adds 10s squats exercises.",
         fun: "Ultra in game = Ultra IRL",
         type: "increment",
         exercise: "squat",
-        amount: 15
+        amount: 10
     },
     {
         name:"Godlike",
@@ -69,8 +69,8 @@ workout_list = [
     {
         name: "BabyRage",
         hint: "If someone starts ranting, moaning or spam pinging, click this button",
-        explain: "Adds 10 p-type",
-        fun: "Did someone babyrage? Do 10 pushups so you can PUNCH THEM IN THE FACE! *Flexes*",
+        explain: "Adds 5 p-type",
+        fun: "Did someone babyrage? Do 5 pushups so you can PUNCH THEM IN THE FACE! *Flexes*",
         type: "increment",
         exercise: "p",
         amount: 10
